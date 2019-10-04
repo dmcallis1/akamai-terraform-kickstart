@@ -1,0 +1,43 @@
+[2019-10-04T12:02:26.034] [INFO] devops-prov.factory - Using credentials file: '/Users/dmcallis/.edgerc', section: 'papi'
+[2019-10-04T12:02:26.036] [INFO] devops-prov.factory - need to create papi
+[2019-10-04T12:02:26.038] [INFO] devops-prov.openclient - Requesting: GET /papi/v0/contracts
+[2019-10-04T12:02:26.045] [INFO] devops-prov.edgegrid.auth - Unsigned authorization header: EG1-HMAC-SHA256 client_token=akab-xqeavpvapllwun5a-5x2zf2hz36moljn4;access_token=akab-3rnqx5mhyayxm5ji-uvrzuearuueaktrl;timestamp=20191004T16:02:26+0000;nonce=f0fc0db7-4b36-4df7-901b-83f3727a959f;
+
+[2019-10-04T12:02:26.045] [INFO] devops-prov.edgegrid.helpers - Body is ""
+[2019-10-04T12:02:26.045] [DEBUG] devops-prov.edgegrid.helpers - PREPARED BODY LENGTH 0
+[2019-10-04T12:02:26.045] [INFO] devops-prov.edgegrid.helpers - Data to sign: "GET	https	akab-ngfkfrfxsezjrqhp-3dawvnhsnjochqd6.luna.akamaiapis.net	/papi/v0/contracts			EG1-HMAC-SHA256 client_token=akab-xqeavpvapllwun5a-5x2zf2hz36moljn4;access_token=akab-3rnqx5mhyayxm5ji-uvrzuearuueaktrl;timestamp=20191004T16:02:26+0000;nonce=f0fc0db7-4b36-4df7-901b-83f3727a959f;" 
+
+[2019-10-04T12:02:26.046] [INFO] devops-prov.edgegrid.helpers - Signing key: 9HTytoiyXCEBT8PtAsdd+xbbxWkMpOmfUZzdA9kndhw=
+
+[2019-10-04T12:02:26.046] [INFO] devops-prov.edgegrid.auth - Signed authorization header: EG1-HMAC-SHA256 client_token=akab-xqeavpvapllwun5a-5x2zf2hz36moljn4;access_token=akab-3rnqx5mhyayxm5ji-uvrzuearuueaktrl;timestamp=20191004T16:02:26+0000;nonce=f0fc0db7-4b36-4df7-901b-83f3727a959f;signature=e5gKCjtolG02JBhrKJG1m7A4k966RKyyMGyN2Eap+VA=
+
+[2019-10-04T12:02:26.083] [INFO] devops-prov.edgegrid - request { debugId: 1,
+  uri: 'https://akab-ngfkfrfxsezjrqhp-3dawvnhsnjochqd6.luna.akamaiapis.net/papi/v0/contracts',
+  method: 'GET',
+  headers: 
+   { 'X-User-Agent': 'Akamai-PD; Version=0.4.0;pm-cli;',
+     Authorization: 'EG1-HMAC-SHA256 client_token=akab-xqeavpvapllwun5a-5x2zf2hz36moljn4;access_token=akab-3rnqx5mhyayxm5ji-uvrzuearuueaktrl;timestamp=20191004T16:02:26+0000;nonce=f0fc0db7-4b36-4df7-901b-83f3727a959f;signature=e5gKCjtolG02JBhrKJG1m7A4k966RKyyMGyN2Eap+VA=',
+     host: 'akab-ngfkfrfxsezjrqhp-3dawvnhsnjochqd6.luna.akamaiapis.net' } }
+[2019-10-04T12:02:26.945] [INFO] devops-prov.edgegrid - response { debugId: 1,
+  headers: 
+   { 'papi-cache-status': 'CACHE_MISS',
+     link: '<https://akab-ngfkfrfxsezjrqhp-3dawvnhsnjochqd6.luna.akamaiapis.net/papi/v0/schemas/request/GetContractResponse.json>; rel="describedby"',
+     'cache-control': 'no-store',
+     vary: 'Accept-Encoding,Accept-Encoding',
+     'content-type': 'application/json;charset=UTF-8',
+     'x-trace-id': '3d005d976d1201dd',
+     'content-length': '169',
+     date: 'Fri, 04 Oct 2019 16:02:26 GMT',
+     connection: 'close' },
+  statusCode: 200,
+  body: '{\n  "accountId" : "act_B-C-1ED34DK",\n  "contracts" : {\n    "items" : [ {\n      "contractId" : "ctr_C-1ED34DY",\n      "contractTypeName" : "AKAMAI_INTERNAL"\n    } ]\n  }\n}' }
+[2019-10-04T12:02:26.946] [INFO] devops-prov.openclient - Status code:  200
+[2019-10-04T12:02:26.946] [INFO] devops-prov.openclient - Body:  {
+  "accountId" : "act_B-C-1ED34DK",
+  "contracts" : {
+    "items" : [ {
+      "contractId" : "ctr_C-1ED34DY",
+      "contractTypeName" : "AKAMAI_INTERNAL"
+    } ]
+  }
+}
