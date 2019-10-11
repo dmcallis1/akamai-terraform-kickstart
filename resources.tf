@@ -1,16 +1,23 @@
-
-
-
 resource "akamai_edge_hostname" "myhostname" {
     edge_hostname = "www.example.com.edgekey.net"
     group = "${data.akamai_group.default.id}"
     contract = "${data.akamai_contract.default.id}"
-    product = "prd_SPM"
+    product = "${var.product_id}"
 
     # The CPS enrollment ID which can support the edge hostname, defined above
-    certificate = 74470
+    certificate = "${var.enrollment_id}"
     ipv4 = true
     ipv6 = true
+}
+
+resource "akamai_cp_code" "myCPCode" {
+
+    # Using a akamai_cp_code resource will result in a TF-managed CP Code
+
+    contract = "${data.akamai_contract.default.id}"
+    group    = "${data.akamai_group.default.id}"
+    name = "myCPCodeName"
+    product = "${var.product_id}"
 }
 
 resource "akamai_property" "myProperty" {
@@ -23,7 +30,7 @@ resource "akamai_property" "myProperty" {
     product  = "prd_SPM"
     contract = "${data.akamai_contract.default.id}"
     group    = "${data.akamai_group.default.id}"
-    cp_code  = "${data.akamai_cp_code.default.id}"
+    cp_code  = "${akamai_cp_code.myCPCode.id}"
 
     /*
 

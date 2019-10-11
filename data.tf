@@ -24,6 +24,8 @@ data "akamai_group" "default" {
 data "akamai_cp_code" "default" {
    /*
 
+    Use this method for pulling details of existing CP Codes (not TF-managed)
+
     The name of the CP Code as it appears in Luna:
 
     'Account Admin' -> 'CP Codes' -> (Search for CP Code to use)
